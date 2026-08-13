@@ -7,7 +7,7 @@ from log_config import LogLevel, MessageType, MESSAGES
 
 def run_audit():
     # Generate 200-lines mock corporate server log
-    with open("server.log", "w") as file:
+    with open("Day_01/server.log", "w") as file:
         for _ in range(1, 201):
             now = datetime.now()
             timestamp = now.strftime("%Y-%m-%d %H:%M:%S")
@@ -33,7 +33,7 @@ def run_audit():
     logger.addHandler(stream_handler)
     
     # Attach rotating file handler (analysis.log)
-    rotating_file_handler = RotatingFileHandler("analysis.log", maxBytes=50000, backupCount=2)
+    rotating_file_handler = RotatingFileHandler("Day_01/analysis.log", maxBytes=50000, backupCount=2)
     rotating_file_handler.setLevel(logging.DEBUG)
     
     # Clean up formatting for analysis.log rows
@@ -53,7 +53,7 @@ def run_audit():
     severity_counter = Counter()
 
     # Open server.log and iterate it line by line
-    with open("server.log", "r") as file:
+    with open("Day_01/server.log", "r") as file:
         for line in file:
             raw_parts = line.split("|")
             clean_parts = [part.strip() for part in raw_parts]
