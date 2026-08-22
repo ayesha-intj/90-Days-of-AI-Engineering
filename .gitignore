@@ -1,0 +1,17 @@
+# --- Python Artifacts ---
+__pycache__/
+*.py[cod]
+*$py.class
+
+# --- Local Log Files ---
+*.log
+
+# --- Code Editor Configurations ---
+.vscode/
+.idea/
+
+# --- Virtual Environments ---
+.venv/
+venv/
+ENV/
+env/
