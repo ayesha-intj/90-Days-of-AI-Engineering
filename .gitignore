@@ -15,3 +15,6 @@ __pycache__/
 venv/
 ENV/
 env/
+
+# Ignore Code Runner temp files
+tempCodeRunnerFile*
