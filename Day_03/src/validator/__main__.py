@@ -1,7 +1,8 @@
-from validator import process_purchase_orders
+from validator.processor import process_purchase_orders, create_summary
 
 def main():
-    process_purchase_orders()
+    _, passed, failed = process_purchase_orders()
+    create_summary(passed, failed)
     
 if __name__ == '__main__':
     main()
